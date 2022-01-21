@@ -1,27 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Phone } from '../interfaces';
-import {Phones} from '../phone.datasource';
 
-
-
+import { PhonesService } from '../services/phones.service';
 
 @Component({
   selector: 'app-phone-list',
   templateUrl: './phone-list.component.html',
-  styleUrls: ['./phone-list.component.css']
+  styleUrls: ['./phone-list.component.css'],
 })
 export class PhoneListComponent {
-  
-  phones = Phones;
- 
+  phones!: Phone[];
 
-  constructor() { }
+  constructor(private phoneService: PhonesService) {}
 
   ngOnInit(): void {
+    this.getPhones();
   }
-  
- 
-  
-  
-  
+
+  getPhones(): void {
+    this.phoneService.getPhones()
+      .subscribe(phones => {
+      this.phones = phones;
+    });
+  }
 }
