@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { LeftMenuComponent } from './left-menu/left-menu.component';
+import { PhoneDetailsComponent } from './phone-details/phone-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhoneListComponent,
-    LeftMenuComponent
+    LeftMenuComponent,
+    PhoneDetailsComponent
   ],
   imports: [
     BrowserModule,
