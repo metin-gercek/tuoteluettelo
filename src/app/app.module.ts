@@ -8,13 +8,17 @@ import { LeftMenuComponent } from './left-menu/left-menu.component';
 import { PhoneDetailsComponent } from './phone-details/phone-details.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PhoneListComponent,
     LeftMenuComponent,
-    PhoneDetailsComponent
+    PhoneDetailsComponent,
+    NavbarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

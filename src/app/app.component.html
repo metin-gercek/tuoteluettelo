@@ -1,17 +1,20 @@
-<div class="container row m-5">
-  <h2>{{title}}</h2>
-  <div class="col-sm-3 ">
-    <app-left-menu></app-left-menu>
+<div class="container">
+  <div class="row m-5 justify-content-center">
+    <app-navbar></app-navbar>
     
+    <div class="col-sm-3 ">
+      <app-left-menu></app-left-menu>
+  
+    </div>
+    <br />
+    <div class="col-sm-9 ">
+      <app-phone-list></app-phone-list>
+  
+    </div>
+  
+    <hr>
+    <router-outlet></router-outlet>
+  
   </div>
-  <br />
-  <div class="col-sm-9 ">
-    <app-phone-list></app-phone-list>
-    
-  </div>
-
-  <hr>
-  <router-outlet></router-outlet>
   
 </div>
-
