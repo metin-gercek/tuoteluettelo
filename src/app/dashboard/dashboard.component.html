@@ -1,1 +1,17 @@
+<app-left-menu></app-left-menu>
+<div class="card my-2" *ngFor="let phone of phones">
+    <div class="row">
+        <div class="col-3">
+            <img src="{{ phone.imageUrl }}" class="card-img">
+        </div>
+        <div class="col-9">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a routerLink = 'details/{{ phone.age }}'> {{ phone.id }}</a>
+                </h4>
+                <p class="card-text">{{ phone.snippet }} </p>
 
+            </div>
+        </div>
+    </div>
+</div>

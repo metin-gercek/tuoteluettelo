@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Phone } from '../interfaces';
@@ -9,11 +10,19 @@ import { Phones } from '../phone.datasource';
 })
 export class PhonesService {
 
-  constructor() { }
+  private apiPhonesUrl = 'api/phones';
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getPhones():Observable<Phone[]> {
-    return of(Phones);
+    
+    return this.http.get<Phone[]>(this.apiPhonesUrl);
 
+  }
+
+  getPhone(age: Number): Observable<Phone | any>{
+    return this.http.get<Phone>(this.apiPhonesUrl+'/'+age);
   }
 
 }
