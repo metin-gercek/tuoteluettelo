@@ -4,4 +4,5 @@ export class Phone {
   imageUrl!: String;
   snippet!: String;
   name!: String;
+  carrier!: any;
 }

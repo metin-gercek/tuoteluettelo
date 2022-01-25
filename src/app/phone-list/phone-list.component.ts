@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Phone } from '../interfaces';
-
+import * as phoneData from '../../assets/phones/phones.json';
 import { PhonesService } from '../services/phones.service';
 
 @Component({
@@ -9,7 +9,9 @@ import { PhonesService } from '../services/phones.service';
   styleUrls: ['./phone-list.component.css'],
 })
 export class PhoneListComponent {
+  
   phones!: Phone[];
+  
 
   constructor(private phoneService: PhonesService) {}
 

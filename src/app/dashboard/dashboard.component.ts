@@ -19,6 +19,6 @@ export class DashboardComponent implements OnInit {
   getPhones(): void {
     this.phoneService.getPhones()
           .subscribe((phones: Phone[]) => this.phones = phones)
-  }
-
+        }
+ 
 }
