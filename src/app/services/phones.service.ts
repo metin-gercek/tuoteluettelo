@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Phone } from '../interfaces';
 import { Phones } from '../phone.datasource';
-import * as phoneData from '../../assets/phones/phones.json';
+
 import { throwError } from 'rxjs';
 
-console.log(phoneData);
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +26,8 @@ export class PhonesService {
 
   }
 
-  getPhone(age: Number): Observable<Phone | any>{
-    return this.http.get<Phone>(this.apiPhonesUrl+'/'+age);
+  getPhone(id: String): Observable<Phone | any>{
+    return this.http.get<Phone>(this.apiPhonesUrl+'/'+id);
   }
 
 }

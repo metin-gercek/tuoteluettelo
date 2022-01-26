@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Phone } from '../interfaces';
 import * as phoneData from '../../assets/phones/phones.json';
 import { PhonesService } from '../services/phones.service';
@@ -10,8 +10,9 @@ import { PhonesService } from '../services/phones.service';
 })
 export class PhoneListComponent {
   
+  @Output()
   phones!: Phone[];
-  
+  searchList! : String;
 
   constructor(private phoneService: PhonesService) {}
 
@@ -25,4 +26,6 @@ export class PhoneListComponent {
       this.phones = phones;
     });
   }
+
+  
 }

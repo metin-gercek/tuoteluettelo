@@ -20,8 +20,8 @@ export class PhoneDetailsComponent implements OnInit {
   }
 
   getPhone(): void {
-    const age = +this.route.snapshot.paramMap.get('age')!; 
-    this.phoneService.getPhone(age)
+    const id = this.route.snapshot.paramMap.get('id')!; 
+    this.phoneService.getPhone(id)
         .subscribe(phone=>this.phone = phone);
     
   }

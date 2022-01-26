@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PhoneFilterPipe } from './phone-list/phone-filter.pipe';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService } from './services/in-memory-data.service';
 
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     LeftMenuComponent,
     PhoneDetailsComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    PhoneFilterPipe
   ],
   imports: [
     BrowserModule,
