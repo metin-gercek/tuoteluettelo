@@ -1,10 +1,9 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { PhoneDetails } from '../details.interface';
 import { Phone } from '../interfaces';
-import { Phones } from '../phone.datasource';
 
-import { throwError } from 'rxjs';
 
 
 
@@ -13,21 +12,25 @@ import { throwError } from 'rxjs';
 })
 export class PhonesService {
 
-  apiPhonesUrl = "assets/phones/phones.json";
-  // private apiPhonesUrl = 'api/phones';
+  
+  
   constructor(
     private http: HttpClient
   ) { }
 
+ 
+
   getPhones():Observable<Phone[]> {
+    const phones = this.http.get<Phone[]>("assets/phones/phones.json");
     
     
-    return this.http.get<Phone[]>(this.apiPhonesUrl);
+    return phones;
 
   }
 
-  getPhone(id: String): Observable<Phone | any>{
-    return this.http.get<Phone>(this.apiPhonesUrl+'/'+id);
+  getProduct(id: String): any{
+    const phone = this.http.get<PhoneDetails[]>("assets/phones/"+ id +".json");
+    return phone;
   }
 
 }
