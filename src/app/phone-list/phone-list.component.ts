@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Phone } from '../interfaces';
 import * as phoneData from '../../assets/phones/phones.json';
 import { PhonesService } from '../services/phones.service';
@@ -16,11 +16,16 @@ import { PhonesService } from '../services/phones.service';
 
 export class PhoneListComponent {
   
-  @Output()
+  @Input() searchList! : string;
+  @Output() searchEvent = new EventEmitter<string>();
   phones!: Phone[];
-  searchList! : String;
+  
 
   constructor(private phoneService: PhonesService) {}
+
+  sentEvent() {
+    this.searchEvent.emit(this.searchList);
+  }
 
   ngOnInit(): void {
     this.getPhones();

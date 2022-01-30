@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Phone } from '../interfaces';
 import { PhoneFilterPipe } from '../phone-list/phone-filter.pipe';
 import  { PhoneListComponent } from '../phone-list/phone-list.component';
@@ -10,10 +10,13 @@ import  { PhoneListComponent } from '../phone-list/phone-list.component';
 })
 export class LeftMenuComponent implements OnInit {
   
-  searchList!: PhoneListComponent | any;
+  @Input() searchList!: string;
+  @Output() searchEvent = new EventEmitter<string>(); 
   phone!: Phone[] | undefined;
 
- 
+  sentEvent() {
+    this.searchEvent.emit(this.searchList);
+  }
 
   constructor() { }
 

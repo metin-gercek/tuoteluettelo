@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-
-
+import { Component, Input } from '@angular/core';
+import { PhoneListComponent } from '../app/phone-list/phone-list.component'
 
 
 
@@ -11,5 +10,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Phone List';
+  @Input()searchList! : PhoneListComponent;
   
 }

@@ -1,11 +1,23 @@
 <div class="row justify-content-center">
-    <div class="col-sm-3 ">
-        <app-left-menu></app-left-menu>
+  <div class="col-sm-3">
+    <p>Search:</p>
+    <input
+      class="form-control"
+      id="myInput"
+      type="text"
+      [(ngModel)]="searchList"
+    />
+    <br />
+    <select class="form-select" aria-label="Default select example">
+      <option selected></option>
+      <option value="1" selected>Newest</option>
+      <option value="2">Alphabetical</option>
+    </select>
+
     
-      </div>
-      <br />
-      <div class="col-sm-9 ">
-        <app-phone-list></app-phone-list>
-    
-      </div>
+  </div>
+  <br />
+  <div class="col-sm-9">
+    <app-phone-list [searchList]="searchList" (sentEvent)="searchList=$event" ></app-phone-list>
+  </div>
 </div>

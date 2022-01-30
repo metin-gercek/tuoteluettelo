@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Phone } from '../interfaces';
+import { PhoneListComponent } from '../phone-list/phone-list.component';
 import { PhonesService } from '../services/phones.service';
 
 @Component({
@@ -10,8 +11,12 @@ import { PhonesService } from '../services/phones.service';
 export class DashboardComponent implements OnInit {
 
   phones: Phone[] = [];
+  searchList! : any;
+  
   constructor(private phoneService: PhonesService) { }
 
+  
+ 
   ngOnInit() {
     this.getPhones();
   }
