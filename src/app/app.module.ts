@@ -12,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PhoneFilterPipe } from './phone-list/phone-filter.pipe';
+import { OrderModule } from 'ngx-order-pipe';
+
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService } from './services/in-memory-data.service';
 
@@ -31,6 +33,7 @@ import { PhoneFilterPipe } from './phone-list/phone-filter.pipe';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    OrderModule
     // HttpClientInMemoryWebApiModule.forRoot(
     //   InMemoryDataService, {dataEncapsulation: false}
     // )

@@ -8,10 +8,10 @@
       [(ngModel)]="searchList"
     />
     <br />
-    <select class="form-select" aria-label="Default select example">
+    <select class="form-select" (change) ="sortItem($event)" >
       <option selected></option>
-      <option value="1" selected>Newest</option>
-      <option value="2">Alphabetical</option>
+      <option value="age" selected>Newest</option>
+      <option value="id">Alphabetical</option>
     </select>
 
     

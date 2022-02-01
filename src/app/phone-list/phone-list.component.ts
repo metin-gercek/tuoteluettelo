@@ -19,7 +19,7 @@ export class PhoneListComponent {
   @Input() searchList! : string;
   @Output() searchEvent = new EventEmitter<string>();
   phones!: Phone[];
-  
+  orderHeader: string = '';
 
   constructor(private phoneService: PhonesService) {}
 
@@ -38,5 +38,12 @@ export class PhoneListComponent {
     });
   }
 
+  
+  sort(event:any) {
+    this.orderHeader = event.target.value; //name or id etc.
+    console.log(this.orderHeader);
+    
+  
+  }
   
 }

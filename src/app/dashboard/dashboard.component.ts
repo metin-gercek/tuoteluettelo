@@ -10,12 +10,15 @@ import { PhonesService } from '../services/phones.service';
 })
 export class DashboardComponent implements OnInit {
 
+  orderHeader: string = '';
   phones: Phone[] = [];
   searchList! : any;
+  objectKeys = Object.keys;
+  items = { keyOne: 'Newest', keyTwo: 'Alphabetical'};
   
   constructor(private phoneService: PhonesService) { }
 
-  
+  @ViewChild(PhoneListComponent, {static : true}) listComponent : PhoneListComponent | undefined;
  
   ngOnInit() {
     this.getPhones();
@@ -24,6 +27,9 @@ export class DashboardComponent implements OnInit {
   getPhones(): void {
     this.phoneService.getPhones()
           .subscribe((phones: Phone[]) => this.phones = phones)
-        }
- 
+  }
+  
+  sortItem(event: any) {
+    this.listComponent?.sort(event)
+  }
 }
