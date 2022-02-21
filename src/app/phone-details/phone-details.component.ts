@@ -50,20 +50,6 @@ export class PhoneDetailsComponent implements OnInit {
       }));
 
       
-
-
-
-
-    // const id = this.route.snapshot.paramMap.get('id')!; 
-    // this.phoneService.getProduct(id)
-    //     .subscribe((details: any)=>{
-    //       this.phoneDetails = details;
-    //       this.allReady = true;
-    //       console.log(details);
-    //       console.log(this.phoneDetails.name);
-    //       console.log(this.phoneDetails.battery.type);
-    //     })
-  
   
   }
   imgSrc: string = '"assets/" + image;' 
