@@ -13,13 +13,13 @@ import { PhonesService } from '../services/phones.service';
   styleUrls: ['./phone-details.component.css']
 })
 export class PhoneDetailsComponent implements OnInit {
-  
-  
+
+
   phoneDetails!: any;
   searchList! : String;
   phoneId: any;
-  
-  chosenPhone: any;
+
+  chosenPhone!: any;
   allReady: boolean = false;
   faCheck = faCheck;
   faTimes = faTimes;
@@ -28,31 +28,31 @@ export class PhoneDetailsComponent implements OnInit {
   constructor(
     private phoneService: PhonesService,
     private route: ActivatedRoute,
-    
+
   ) { }
 
   ngOnInit(): void {
     this.getPhone();
-    
+
   }
 
   getPhone(): void {
     this.phoneId = this.route.snapshot.params['id'];
     this.route.params.subscribe((params) => {
       this.phoneId = params['id'];
-     
+
     });
-    
+
     this.phoneService.getProduct(this.phoneId).subscribe(((data: any) => {
       this.chosenPhone = data;
       this.allReady = true;
-      
+
       }));
 
-      
-  
+
+
   }
-  imgSrc: string = '"assets/" + image;' 
+  imgSrc: string = '"assets/" + image;'
   changeImg(event: any) {
     this.newImageString = event.target.getAttribute('src');
     document.getElementById('view-img')?.setAttribute('src', this.newImageString);
