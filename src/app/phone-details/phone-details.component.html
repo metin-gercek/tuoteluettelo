@@ -43,38 +43,38 @@
 <div class="row">
   <div class="col-6 col-md m-5">
     <h4>Availabilty and Networks</h4>
-    <p>{{ chosenPhone.availability }}</p>
+    <p>{{ chosenPhone?.availability }}</p>
   </div>
   <div class="col-6 col-md m-5">
     <h4>Battery</h4>
     <h6>Type</h6>
-    <p>{{ chosenPhone.battery.type }}</p>
+    <p>{{ chosenPhone?.battery.type }}</p>
     <h6>Talk Time</h6>
-    <p>{{ chosenPhone.battery.talkTime }}</p>
+    <p>{{ chosenPhone?.battery.talkTime }}</p>
     <h6>Standbt Time (Max)</h6>
-    <p>{{ chosenPhone.battery.standbyTime }}</p>
+    <p>{{ chosenPhone?.battery.standbyTime }}</p>
 
 
   </div>
   <div class="col-6 col-md m-5">
     <h4>Storage and Memory</h4>
     <h6>RAM</h6>
-    <p>{{ chosenPhone.storage.ram }}</p>
+    <p>{{ chosenPhone?.storage.ram }}</p>
     <h6>Internal Storage</h6>
-    <p>{{ chosenPhone.storage.flash }}</p>
+    <p>{{ chosenPhone?.storage.flash }}</p>
   </div>
   <div class="col-6 col-md m-5">
     <h4>Connectivity</h4>
     <h6>Network Support</h6>
     <h6>WIFI</h6>
-    <p>{{ chosenPhone.connectivity.wifi }}</p>
+    <p>{{ chosenPhone?.connectivity.wifi }}</p>
     <h6>Bluetooth</h6>
-    <p>{{ chosenPhone.connectivity.bluetooth }}</p>
+    <p>{{ chosenPhone?.connectivity.bluetooth }}</p>
     <h6 >Infrared</h6>
-    <p *ngIf="chosenPhone.connectivity.infrared == false"><fa-icon [icon]="faTimes"></fa-icon></p>
-    <p *ngIf="chosenPhone.connectivity.infrared == true"><fa-icon [icon]="faCheck"></fa-icon></p>
+    <p *ngIf="chosenPhone?.connectivity.infrared == false"><fa-icon [icon]="faTimes"></fa-icon></p>
+    <p *ngIf="chosenPhone?.connectivity.infrared == true"><fa-icon [icon]="faCheck"></fa-icon></p>
     <h6>GPS</h6>
-    <p *ngIf="chosenPhone.connectivity.gps == false" ><fa-icon [icon]="faTimes"></fa-icon></p>
-    <p *ngIf="chosenPhone.connectivity.gps == true"><fa-icon [icon]="faCheck"></fa-icon></p>
+    <p *ngIf="chosenPhone?.connectivity.gps == false" ><fa-icon [icon]="faTimes"></fa-icon></p>
+    <p *ngIf="chosenPhone?.connectivity.gps == true"><fa-icon [icon]="faCheck"></fa-icon></p>
   </div>
 </div>
