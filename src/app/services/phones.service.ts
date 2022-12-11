@@ -12,18 +12,18 @@ import { Phone } from '../interfaces';
 })
 export class PhonesService {
 
-  
-  
+
+
   constructor(
     private http: HttpClient
   ) { }
 
- 
+
 
   getPhones():Observable<Phone[]> {
     const phones = this.http.get<Phone[]>("assets/phones/phones.json");
-    
-    
+
+
     return phones;
 
   }
